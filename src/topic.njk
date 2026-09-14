@@ -1,0 +1,38 @@
+---
+pagination:
+  data: topics
+  size: 1
+  alias: topic
+permalink: "/{{ topic.slug }}/"
+layout: base.njk
+---
+{% from "card.njk" import renderCard %}
+{% set title = topic.title %}
+<header class="page-head">
+<h1>{{ topic.title }}</h1>
+<p class="sub">{{ topic.subtitle }}</p>
+<div class="divider"></div>
+</header>
+<p style="text-align:center; margin-top:-8px;"><a href="/">← Tất cả chủ đề</a></p>
+<div class="toolbar">
+<div class="toolbar-inner">
+<input id="search" placeholder="Tìm theo tên Pāli hoặc nghĩa tiếng Việt..." type="text">
+<button class="btn primary" id="expand-all" type="button">Mở tất cả</button>
+<button class="btn" id="collapse-all" type="button">Thu gọn</button>
+<div id="count-info">Hiển thị {{ topic.items.length }}/{{ topic.items.length }} mục</div>
+</div>
+<div class="chips">
+{% for item in topic.items %}
+<a class="chip" data-target="part-{{ item.id }}" href="#part-{{ item.id }}"><span>{{ item.emoji }}</span>{{ item.pali_name }}</a>
+{% endfor %}
+</div>
+</div>
+<main class="cards" id="cards">
+{% for item in topic.items %}
+{{ renderCard(item, topic) }}
+{% endfor %}
+</main>
+<footer class="page-foot">
+Nhấn vào tiêu đề mỗi mục để xem chi tiết đối chiếu {{ topic.sources.length }} nguồn. Bấm nút gạt 🇻🇳 để hiện/ẩn bản dịch tiếng Việt.
+</footer>
+<script src="/assets/js/topic.js"></script>

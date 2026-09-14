@@ -1,0 +1,45 @@
+{% macro renderCard(item, topic) %}
+<article class="card" data-search="{{ (item.pali_name + ' ' + item.translation) | lower }}" id="part-{{ item.id }}">
+<button aria-expanded="false" class="card-header" type="button">
+<span class="num">{{ item.order_padded }}</span>
+<span class="emoji-container">{{ item.emoji }}</span>
+<span class="title-block">
+{% if item.video_link %}
+<a class="pali-name" href="{{ item.video_link }}" onclick="event.stopPropagation()" rel="noopener" target="_blank" title="Xem video giải phẫu trên YouTube của Sam Webster">{{ item.pali_name }}</a>
+{% else %}
+<span class="pali-name">{{ item.pali_name }}</span>
+{% endif %}
+{% if item.translation %}<span class="translation">{{ item.translation }}</span>{% endif %}
+</span>
+<span class="chevron">⌄</span>
+</button>
+<div class="card-body" hidden>
+{% if item.video_file %}
+<div class="video-container"><video class="custom-video" controls><source src="/media/{{ topic.slug }}/{{ item.video_file }}" type="video/mp4"></video></div>
+{% endif %}
+<div class="tabs">
+{% for src in topic.sources %}
+<button class="tab-btn{% if loop.first %} active{% endif %}" data-tab="{{ src.key }}" type="button">{{ src.label }}</button>
+{% endfor %}
+</div>
+<div class="tab-panels">
+{% for src in topic.sources %}
+{% set s = item.sources[src.key] %}
+<div class="tab-panel" data-panel="{{ src.key }}"{% if not loop.first %} hidden{% endif %}>
+<div class="pali-text">{{ s.pali_html | safe }}</div>
+<div class="translate-row">
+<label class="translate-switch">
+<input class="translate-checkbox" type="checkbox">
+<span class="switch-track"><span class="switch-thumb"></span></span>
+<span class="switch-label">🇻🇳 Xem bản dịch tiếng Việt</span>
+</label>
+</div>
+<div class="vi-translation" hidden>
+{{ s.vi_html | safe }}
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</article>
+{% endmacro %}

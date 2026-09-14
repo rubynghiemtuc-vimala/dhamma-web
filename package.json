@@ -1,0 +1,14 @@
+{
+  "name": "phap-am-archive",
+  "version": "1.0.0",
+  "description": "Kho van ban doi chieu Pali - Viet (bat dau voi 32 The Truoc)",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Pháp Âm Archive
+---
+<header class="page-head">
+<h1>Pháp Âm Archive</h1>
+<p class="sub">Kho văn bản đối chiếu Pāli – Việt, nhiều nguồn chú giải</p>
+<div class="divider"></div>
+</header>
+<main class="cards" id="cards" style="margin-top:24px;">
+{% for topic in topics %}
+<article class="card">
+<a class="card-header" href="/{{ topic.slug }}/" style="text-decoration:none; display:flex;">
+<span class="title-block">
+<span class="pali-name">{{ topic.title }}</span>
+<span class="translation">{{ topic.subtitle }}</span>
+</span>
+<span class="chevron">→</span>
+</a>
+</article>
+{% endfor %}
+</main>

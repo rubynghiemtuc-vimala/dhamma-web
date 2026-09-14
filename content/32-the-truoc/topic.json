@@ -1,0 +1,20 @@
+{
+  "slug": "32-the-truoc",
+  "title": "Tổng Hợp 32 Thể Trược",
+  "subtitle": "32 phần thân thể (Dvattiṃsākāra) — đối chiếu 3 nguồn: Vbg-ṭhā · Psm-ṭhā · Khuddaka-ṭhā",
+  "sources": [
+    {
+      "key": "vbg",
+      "label": "Vbg-ṭhā"
+    },
+    {
+      "key": "psm",
+      "label": "Psm-ṭhā"
+    },
+    {
+      "key": "khudda",
+      "label": "Khuddaka-ṭhā"
+    }
+  ],
+  "item_count": 32
+}
