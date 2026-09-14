@@ -15,7 +15,7 @@
 </button>
 <div class="card-body" hidden>
 {% if item.video_file %}
-<div class="video-container"><video class="custom-video" controls><source src="/media/{{ topic.slug }}/{{ item.video_file }}" type="video/mp4"></video></div>
+<div class="video-container"><video class="custom-video" controls><source src="{{ '/media/' | url }}{{ topic.slug }}/{{ item.video_file }}" type="video/mp4"></video></div>
 {% endif %}
 <div class="tabs">
 {% for src in topic.sources %}

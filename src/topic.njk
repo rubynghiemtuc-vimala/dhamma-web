@@ -13,7 +13,7 @@ layout: base.njk
 <p class="sub">{{ topic.subtitle }}</p>
 <div class="divider"></div>
 </header>
-<p style="text-align:center; margin-top:-8px;"><a href="/">← Tất cả chủ đề</a></p>
+<p style="text-align:center; margin-top:-8px;"><a href="{{ '/' | url }}">← Tất cả chủ đề</a></p>
 <div class="toolbar">
 <div class="toolbar-inner">
 <input id="search" placeholder="Tìm theo tên Pāli hoặc nghĩa tiếng Việt..." type="text">
@@ -35,4 +35,4 @@ layout: base.njk
 <footer class="page-foot">
 Nhấn vào tiêu đề mỗi mục để xem chi tiết đối chiếu {{ topic.sources.length }} nguồn. Bấm nút gạt 🇻🇳 để hiện/ẩn bản dịch tiếng Việt.
 </footer>
-<script src="/assets/js/topic.js"></script>
+<script src="{{ '/assets/js/topic.js' | url }}"></script>
