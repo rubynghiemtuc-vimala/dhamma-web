@@ -1,4 +1,4 @@
-# Pháp Âm Archive
+
 
 Kho văn bản đối chiếu Pāli – Việt, nhiều nguồn chú giải. Bắt đầu với chủ đề
 **32 Thể Trược** (Dvattiṃsākāra), thiết kế để dễ mở rộng thêm chủ đề khác sau này.
