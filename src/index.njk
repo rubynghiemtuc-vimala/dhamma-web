@@ -10,7 +10,7 @@ title: Pháp Âm Archive
 <main class="cards" id="cards" style="margin-top:24px;">
 {% for topic in topics %}
 <article class="card">
-<a class="card-header" href="/{{ topic.slug }}/" style="text-decoration:none; display:flex;">
+<a class="card-header" href="{{ ('/' + topic.slug + '/') | url }}" style="text-decoration:none; display:flex;">
 <span class="title-block">
 <span class="pali-name">{{ topic.title }}</span>
 <span class="translation">{{ topic.subtitle }}</span>
